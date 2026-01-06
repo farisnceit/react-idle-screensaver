@@ -8,10 +8,9 @@ export const BouncingScreensaver: React.FC<BouncingScreensaverProps> = ({
   const elRef = useRef<HTMLDivElement>(null);
   const pos = useRef({ x: 100, y: 100 });
   const vel = useRef({ x: 2.5, y: 2.5 });
+  const rafRef = useRef<number>(0);
 
   useEffect(() => {
-    let id: number;
-
     const animate = () => {
       if (!elRef.current) return;
 
@@ -23,15 +22,28 @@ export const BouncingScreensaver: React.FC<BouncingScreensaverProps> = ({
       pos.current.x += vel.current.x;
       pos.current.y += vel.current.y;
 
-      if (pos.current.x <= 0 || pos.current.x >= maxX) vel.current.x *= -1;
-      if (pos.current.y <= 0 || pos.current.y >= maxY) vel.current.y *= -1;
+      // Bounce off edges
+      if (pos.current.x <= 0 || pos.current.x >= maxX) {
+        vel.current.x *= -1;
+        // Clamp position to prevent getting stuck
+        pos.current.x = Math.max(0, Math.min(maxX, pos.current.x));
+      }
+      if (pos.current.y <= 0 || pos.current.y >= maxY) {
+        vel.current.y *= -1;
+        pos.current.y = Math.max(0, Math.min(maxY, pos.current.y));
+      }
 
       el.style.transform = `translate3d(${pos.current.x}px, ${pos.current.y}px, 0)`;
-      id = requestAnimationFrame(animate);
+      rafRef.current = requestAnimationFrame(animate);
     };
 
-    id = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(id);
+    rafRef.current = requestAnimationFrame(animate);
+    
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
   }, []);
 
   return (
@@ -46,6 +58,8 @@ export const BouncingScreensaver: React.FC<BouncingScreensaverProps> = ({
         display: "flex",
         alignItems: "center",
         gap: "1rem",
+        willChange: "transform", // Performance optimization
+        pointerEvents: "none", // Allow clicks to pass through
       }}
     >
       <Monitor />

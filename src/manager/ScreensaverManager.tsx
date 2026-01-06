@@ -1,4 +1,4 @@
-import React, { ComponentType, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { ScreensaverContext } from "../context/ScreensaverContext";
 import { useIdleTimer } from "../hooks/useIdleTimer";
 import { ScreensaverManagerProps } from "../types";
@@ -14,7 +14,7 @@ export function ScreensaverManager<
   zIndex = 50,
   onScreenSaverStop,
 }: ScreensaverManagerProps<T>) {
-  const isIdle = useIdleTimer(timeout, active);
+  const { isIdle } = useIdleTimer({idleTime: timeout});
   const shouldShow = active && isIdle;
   const wasShowing = useRef(false);
 
