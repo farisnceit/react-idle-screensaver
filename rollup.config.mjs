@@ -4,7 +4,8 @@ import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import dts from 'rollup-plugin-dts';
-import pkg from './package.json' assert { type: 'json' };
+import terser  from '@rollup/plugin-terser';
+
 
 export default [
   // 1️⃣ JS build (ESM + CJS)
@@ -12,12 +13,12 @@ export default [
     input: 'src/index.ts',
     output: [
       {
-        file: pkg.main,
+        file: 'dist/index.cjs.js',
         format: 'cjs',
         sourcemap: true,
       },
       {
-        file: pkg.module,
+        file: 'dist/index.esm.js',
         format: 'esm',
         sourcemap: true,
       },
@@ -33,14 +34,20 @@ export default [
       }),
       typescript({
         tsconfig: './tsconfig.json',
+         declaration: false,
+         emitDeclarationOnly: false,
+         declarationDir: 'dist/types',
+         rootDir: './src',
+        exclude: ['node_modules', 'dist', '**/*.test.ts', '**/*.test.tsx'],
       }),
+      terser(),
     ],
   },
 
   // 2️⃣ Type definitions build
   {
-    input: 'types/index.d.ts',
-    output: [{ file: pkg.types, format: 'es' }],
+    input: 'dist/types/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'es' }],
     plugins: [dts()],
   },
 ];

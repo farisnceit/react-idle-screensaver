@@ -1,9 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { ComponentType, useEffect, useRef } from "react";
 import { ScreensaverContext } from "../context/ScreensaverContext";
 import { useIdleTimer } from "../hooks/useIdleTimer";
 import { ScreensaverManagerProps } from "../types";
 
-export function ScreensaverManager<T>({
+export function ScreensaverManager<
+  T extends Record<string, unknown> = Record<string, unknown>
+>({
   children,
   component: ScreensaverComponent,
   componentProps,
@@ -31,14 +33,7 @@ export function ScreensaverManager<T>({
         </div>
 
         {shouldShow && (
-          <div
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: "black",
-              zIndex,
-            }}
-          >
+          <div style={{ position: "fixed", inset: 0, zIndex }}>
             <ScreensaverComponent {...(componentProps as T)} />
           </div>
         )}
