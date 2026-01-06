@@ -1,0 +1,71 @@
+{
+  "name": "@farizbytes/react-idle-screensaver",
+  "version": "0.1.0",
+  "description": "A lightweight React component and hook for detecting user inactivity and displaying a customizable idle screensaver. Ideal for kiosks, dashboards, TVs, and unattended React applications. Fully typed and compatible with React 18+",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "lucide-react": "^0.260.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "latest",
+    "@rollup/plugin-node-resolve": "latest",
+    "@rollup/plugin-typescript": "latest",
+    "@types/react": "^19.2.7",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "latest",
+    "rollup-plugin-dts": "latest",
+    "rollup-plugin-peer-deps-external": "latest",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "latest"
+  },
+  "homepage": "https://github.com/farisnceit/react-idle-screensaver",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-hook",
+    "screensaver",
+    "idle",
+    "idle-detection",
+    "user-inactivity",
+    "kiosk",
+    "kiosk-mode",
+    "digital-signage",
+    "dashboard",
+    "tv-app",
+    "unattended-ui",
+    "typescript",
+    "react-18"
+  ],
+  "author": {
+    "name": "M Mohamed Fariz",
+    "url": "https://farizbytes.com/contact",
+    "email": "faris872010@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/farisnceit/react-idle-screensaver"
+  },
+  "license": "ISC",
+  "type": "commonjs"
+}

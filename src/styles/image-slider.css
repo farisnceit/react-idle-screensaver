@@ -1,0 +1,66 @@
+.ris-slider {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: black;
+}
+
+.ris-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 2s ease, transform 6s ease;
+}
+
+.ris-slide.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.ris-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    transparent,
+    rgba(0,0,0,0.3)
+  );
+}
+
+.ris-slider-content {
+  position: absolute;
+  inset: 0;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.ris-clock {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.ris-time {
+  font-size: 6rem;
+  font-weight: 300;
+}
+
+.ris-date {
+  font-size: 1.75rem;
+  opacity: 0.85;
+  margin-top: 0.5rem;
+}
+
+.ris-footer {
+  border-left: 4px solid rgba(255,255,255,0.5);
+  padding-left: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 1rem;
+}
