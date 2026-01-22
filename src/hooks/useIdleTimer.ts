@@ -27,10 +27,10 @@ export function useIdleTimer({
   const isIdleRef = useRef(false);
   const eventCountRef = useRef(0);
   const idleTimeRef = useRef(idleTime);
-  
+
   // Memoize events array to prevent recreation on every render
   const eventsList = useMemo(() => events || DEFAULT_EVENTS, [events]);
-  
+
   // Use refs for callbacks to avoid recreating resetTimer
   const onIdleRef = useRef(onIdle);
   const onActiveRef = useRef(onActive);
@@ -53,7 +53,7 @@ export function useIdleTimer({
   // Stable resetTimer function - only recreated if debug changes
   const resetTimer = useCallback(() => {
     eventCountRef.current++;
-    
+
     if (debug) {
       console.log(`[useIdleTimer] resetTimer called (event #${eventCountRef.current}), currently idle: ${isIdleRef.current}`);
     }
@@ -68,11 +68,11 @@ export function useIdleTimer({
       if (debug) console.log("[useIdleTimer] Triggering onActive callback");
       onActiveRef.current();
     }
-    
+
     // Update both state and ref
     const wasIdle = isIdleRef.current;
     isIdleRef.current = false;
-    
+
     // Only update state if it changed to avoid unnecessary re-renders
     if (wasIdle) {
       if (debug) console.log("[useIdleTimer] Setting isIdle to false");
@@ -110,8 +110,7 @@ export function useIdleTimer({
       if (timerRef.current) clearTimeout(timerRef.current);
       eventsList.forEach((e) => window.removeEventListener(e, resetTimer));
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [resetTimer]); // Only re-run when resetTimer changes (which is only when debug changes)
+  }, [resetTimer, eventsList]); // Re-run when resetTimer or eventsList changes
 
   return { isIdle, resetTimer };
 }

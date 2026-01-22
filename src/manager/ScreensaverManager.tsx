@@ -34,8 +34,7 @@ export function ScreensaverManager<
   if (!shouldShow) {
     return (
       <ScreensaverContext.Provider value={{ isIdle }}>
-        {children }
-        <h1>Ge</h1>
+        {children}
       </ScreensaverContext.Provider>
     );
   }

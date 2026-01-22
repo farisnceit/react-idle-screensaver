@@ -1,0 +1,61 @@
+﻿src/context/ScreensaverContext.ts(1,31): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/hooks/useIdleTimer.ts(1,67): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/hooks/useIdleTimer.ts(103,25): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/hooks/useIdleTimer.ts(111,27): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/manager/ScreensaverManager.tsx(1,52): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/manager/ScreensaverManager.tsx(36,7): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/manager/ScreensaverManager.tsx(48,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/manager/ScreensaverManager.tsx(50,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/manager/ScreensaverManager.tsx(51,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/manager/ScreensaverManager.tsx(67,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/manager/ScreensaverManagerDebug.tsx(1,42): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/manager/ScreensaverManagerDebug.tsx(47,5): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/manager/ScreensaverManagerDebug.tsx(48,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/manager/ScreensaverManagerDebug.tsx(49,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/manager/ScreensaverManagerDebug.tsx(51,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/manager/ScreensaverManagerDebug.tsx(54,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/manager/ScreensaverManagerDebug.tsx(56,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/manager/ScreensaverManagerDebug.tsx(58,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/BouncingScreensaver.tsx(1,42): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/screensavers/BouncingScreensaver.tsx(2,25): error TS2307: Cannot find module 'lucide-react' or its corresponding type declarations.
+src/screensavers/BouncingScreensaver.tsx(50,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/BouncingScreensaver.tsx(50,5): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/screensavers/BouncingScreensaver.tsx(66,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/BouncingScreensaver.tsx(66,25): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/BouncingScreensaver.tsx(67,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(1,44): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/screensavers/ImageSliderScreensaver.tsx(27,17): error TS7006: Parameter 'i' implicitly has an 'any' type.
+src/screensavers/ImageSliderScreensaver.tsx(42,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(42,5): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/screensavers/ImageSliderScreensaver.tsx(44,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(53,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(55,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(56,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(58,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(63,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(66,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(72,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(74,9): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(77,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(78,13): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(78,31): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(79,11): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(81,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/ImageSliderScreensaver.tsx(82,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/MatrixScreensaver.tsx(1,42): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/screensavers/MatrixScreensaver.tsx(81,5): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/screensavers/MatrixScreensaver.tsx(81,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/SimpleTestScreensaver.tsx(1,44): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/screensavers/SimpleTestScreensaver.tsx(23,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/SimpleTestScreensaver.tsx(23,5): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/screensavers/SimpleTestScreensaver.tsx(42,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/SimpleTestScreensaver.tsx(53,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/SimpleTestScreensaver.tsx(54,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/SimpleTestScreensaver.tsx(61,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/SimpleTestScreensaver.tsx(62,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/SimpleTestScreensaver.tsx(71,7): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/SimpleTestScreensaver.tsx(72,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/screensavers/StarfieldScreensaver.tsx(1,42): error TS2307: Cannot find module 'react' or its corresponding type declarations.
+src/screensavers/StarfieldScreensaver.tsx(113,5): error TS2875: This JSX tag requires the module path 'react/jsx-runtime' to exist, but none could be found. Make sure you have types for the appropriate package installed.
+src/screensavers/StarfieldScreensaver.tsx(113,5): error TS7026: JSX element implicitly has type 'any' because no interface 'JSX.IntrinsicElements' exists.
+src/types.ts(1,42): error TS2307: Cannot find module 'react' or its corresponding type declarations.
