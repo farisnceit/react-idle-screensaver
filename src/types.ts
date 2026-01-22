@@ -28,6 +28,8 @@ export interface ScreensaverManagerProps<
   zIndex?: number;
   /** Callback when the screensaver stops */
   onScreenSaverStop?: () => void;
+  /** Enable debug logging to console (default: false) */
+  debug?: boolean;
 }
 
 /**

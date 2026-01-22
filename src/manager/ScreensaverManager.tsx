@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ScreensaverContext } from "../context/ScreensaverContext";
 import { useIdleTimer } from "../hooks/useIdleTimer";
 import { ScreensaverManagerProps } from "../types";
@@ -13,10 +13,15 @@ export function ScreensaverManager<
   active = true,
   zIndex = 50,
   onScreenSaverStop,
+  debug = false,
 }: ScreensaverManagerProps<T>) {
-  const { isIdle } = useIdleTimer({idleTime: timeout});
+  const { isIdle } = useIdleTimer({idleTime: timeout, debug});
   const shouldShow = active && isIdle;
   const wasShowing = useRef(false);
+
+  if (debug) {
+    console.log(`[ScreensaverManager] Render - isIdle: ${isIdle}, shouldShow: ${shouldShow}`);
+  }
 
   useEffect(() => {
     if (wasShowing.current && !shouldShow) {
@@ -25,18 +30,31 @@ export function ScreensaverManager<
     wasShowing.current = shouldShow;
   }, [shouldShow, onScreenSaverStop]);
 
+  // Don't render screensaver in a nested div - render at root level
+  if (!shouldShow) {
+    return (
+      <ScreensaverContext.Provider value={{ isIdle }}>
+        {children}
+      </ScreensaverContext.Provider>
+    );
+  }
+
   return (
     <ScreensaverContext.Provider value={{ isIdle }}>
-      <div style={{ minHeight: "100vh", position: "relative" }}>
-        <div style={{ filter: shouldShow ? "blur(4px)" : undefined }}>
-          {children}
-        </div>
-
-        {shouldShow && (
-          <div style={{ position: "fixed", inset: 0, zIndex }}>
-            <ScreensaverComponent {...(componentProps as T)} />
-          </div>
-        )}
+      <div style={{ filter: "blur(4px)" }}>
+        {children}
+      </div>
+      <div 
+        style={{ 
+          position: "fixed", 
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex 
+        }}
+      >
+        <ScreensaverComponent {...(componentProps as T)} />
       </div>
     </ScreensaverContext.Provider>
   );
