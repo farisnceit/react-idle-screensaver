@@ -18,9 +18,9 @@ const screensavers = [
 ]
 
 const sampleImages = [
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
-    'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800',
-    'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=800',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920',
+    'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920',
+    'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1920',
 ]
 
 function App() {
