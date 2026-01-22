@@ -11,7 +11,7 @@ export function ScreensaverManager<
   componentProps,
   timeout = 5000,
   active = true,
-  zIndex = 50,
+  zIndex = 9999,
   onScreenSaverStop,
   debug = false,
 }: ScreensaverManagerProps<T>) {
@@ -34,9 +34,14 @@ export function ScreensaverManager<
   if (!shouldShow) {
     return (
       <ScreensaverContext.Provider value={{ isIdle }}>
-        {children}
+        {children }
+        <h1>Ge</h1>
       </ScreensaverContext.Provider>
     );
+  }
+
+  if (debug) {
+    console.log('[ScreensaverManager] Rendering screensaver overlay');
   }
 
   return (
@@ -45,13 +50,18 @@ export function ScreensaverManager<
         {children}
       </div>
       <div 
+        className="screensaver-overlay"
+        data-screensaver-active="true"
+        data-is-idle={isIdle.toString()}
+        data-should-show={shouldShow.toString()}
         style={{ 
           position: "fixed", 
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          zIndex 
+          zIndex,
+          backgroundColor: debug ? 'rgba(255,0,0,0.1)' : undefined, // Red tint in debug mode
         }}
       >
         <ScreensaverComponent {...(componentProps as T)} />
