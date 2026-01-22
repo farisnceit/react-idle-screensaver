@@ -36,7 +36,6 @@ export default [
         tsconfig: './tsconfig.json',
          declaration: false,
          emitDeclarationOnly: false,
-         declarationDir: 'dist/types',
          rootDir: './src',
         exclude: ['node_modules', 'dist', '**/*.test.ts', '**/*.test.tsx'],
       }),
@@ -49,5 +48,6 @@ export default [
     input: 'dist/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'es' }],
     plugins: [dts()],
+    external: [/\.css$/],
   },
 ];
