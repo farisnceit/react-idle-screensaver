@@ -35,13 +35,7 @@ The problem:
 ### 1. Memoized the events array
 
 ```typescript
-const DEFAULT_EVENTS = [
-  "mousedown",
-  "mousemove",
-  "keypress",
-  "scroll",
-  "touchstart",
-];
+const DEFAULT_EVENTS = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
 
 const eventsList = useMemo(() => events || DEFAULT_EVENTS, [events]);
 ```
@@ -50,7 +44,7 @@ const eventsList = useMemo(() => events || DEFAULT_EVENTS, [events]);
 
 ```typescript
 const resetTimer = useCallback(() => {
-  // ... logic ...
+    // ... logic ...
 }, [debug]); // Only recreate if debug changes
 ```
 
@@ -60,7 +54,7 @@ const resetTimer = useCallback(() => {
 const idleTimeRef = useRef(idleTime);
 
 useEffect(() => {
-  idleTimeRef.current = idleTime;
+    idleTimeRef.current = idleTime;
 }, [idleTime]);
 
 // Then use idleTimeRef.current in setTimeout
@@ -70,10 +64,10 @@ useEffect(() => {
 
 ```typescript
 useEffect(() => {
-  // ... setup ...
-  return () => {
-    // ... cleanup ...
-  };
+    // ... setup ...
+    return () => {
+        // ... cleanup ...
+    };
 }, [resetTimer]); // Only resetTimer, which only changes when debug changes
 ```
 
@@ -92,24 +86,21 @@ Now the hook:
 The package has been rebuilt. In your test app:
 
 ```tsx
-import {
-  ScreensaverManager,
-  SimpleTestScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManager, SimpleTestScreensaver } from '@mohamedfariz/react-idle-screensaver';
 
 function App() {
-  return (
-    <ScreensaverManager
-      component={SimpleTestScreensaver}
-      timeout={5000}
-      debug={true} // Keep debug to verify
-    >
-      <div style={{ padding: "2rem" }}>
-        <h1>Fixed!</h1>
-        <p>Wait 5 seconds...</p>
-      </div>
-    </ScreensaverManager>
-  );
+    return (
+        <ScreensaverManager
+            component={SimpleTestScreensaver}
+            timeout={5000}
+            debug={true} // Keep debug to verify
+        >
+            <div style={{ padding: '2rem' }}>
+                <h1>Fixed!</h1>
+                <p>Wait 5 seconds...</p>
+            </div>
+        </ScreensaverManager>
+    );
 }
 ```
 

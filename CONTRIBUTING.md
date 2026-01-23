@@ -1,4 +1,4 @@
-# Contributing to @farizbytes/react-idle-screensaver
+# Contributing to @mohamedfariz/react-idle-screensaver
 
 Thank you for your interest in contributing to react-idle-screensaver! We welcome contributions from the community.
 

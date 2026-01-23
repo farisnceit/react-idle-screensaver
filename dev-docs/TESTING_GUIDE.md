@@ -29,40 +29,34 @@ npm run build
 ### Step 2: In your test app, use the SimpleTestScreensaver
 
 ```tsx
-import {
-  ScreensaverManager,
-  SimpleTestScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManager, SimpleTestScreensaver } from '@farizbytes/react-idle-screensaver';
 
 function App() {
-  return (
-    <ScreensaverManager component={SimpleTestScreensaver} timeout={5000}>
-      <div>
-        <h1>Your App Content</h1>
-        <p>Wait 5 seconds without moving mouse...</p>
-      </div>
-    </ScreensaverManager>
-  );
+    return (
+        <ScreensaverManager component={SimpleTestScreensaver} timeout={5000}>
+            <div>
+                <h1>Your App Content</h1>
+                <p>Wait 5 seconds without moving mouse...</p>
+            </div>
+        </ScreensaverManager>
+    );
 }
 ```
 
 ### Step 3: Use Debug Version (Optional)
 
 ```tsx
-import {
-  ScreensaverManagerDebug,
-  SimpleTestScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManagerDebug, SimpleTestScreensaver } from '@mohamedfariz/react-idle-screensaver';
 
 function App() {
-  return (
-    <ScreensaverManagerDebug component={SimpleTestScreensaver} timeout={5000}>
-      <div>
-        <h1>Your App Content</h1>
-        <p>Check browser console for debug logs...</p>
-      </div>
-    </ScreensaverManagerDebug>
-  );
+    return (
+        <ScreensaverManagerDebug component={SimpleTestScreensaver} timeout={5000}>
+            <div>
+                <h1>Your App Content</h1>
+                <p>Check browser console for debug logs...</p>
+            </div>
+        </ScreensaverManagerDebug>
+    );
 }
 ```
 
@@ -91,9 +85,9 @@ Your app might have event listeners that trigger on screensaver show:
 ```tsx
 // BAD - This could cause issues
 useEffect(() => {
-  const handler = () => console.log("mouse moved");
-  window.addEventListener("mousemove", handler);
-  return () => window.removeEventListener("mousemove", handler);
+    const handler = () => console.log('mouse moved');
+    window.addEventListener('mousemove', handler);
+    return () => window.removeEventListener('mousemove', handler);
 }, []);
 ```
 
@@ -112,9 +106,9 @@ If using React 18+ Strict Mode in development, it causes double-renders:
 ```tsx
 // In your index.tsx/main.tsx
 <React.StrictMode>
-  {" "}
-  {/* This causes double-renders in dev */}
-  <App />
+    {' '}
+    {/* This causes double-renders in dev */}
+    <App />
 </React.StrictMode>
 ```
 
@@ -125,35 +119,35 @@ If the parent component of ScreensaverManager re-renders frequently:
 ```tsx
 // BAD
 function App() {
-  const [count, setCount] = useState(0);
+    const [count, setCount] = useState(0);
 
-  // This causes ScreensaverManager to re-render every second
-  useEffect(() => {
-    const timer = setInterval(() => setCount((c) => c + 1), 1000);
-    return () => clearInterval(timer);
-  }, []);
+    // This causes ScreensaverManager to re-render every second
+    useEffect(() => {
+        const timer = setInterval(() => setCount((c) => c + 1), 1000);
+        return () => clearInterval(timer);
+    }, []);
 
-  return (
-    <ScreensaverManager component={ImageSliderScreensaver} timeout={5000}>
-      <div>Count: {count}</div>
-    </ScreensaverManager>
-  );
+    return (
+        <ScreensaverManager component={ImageSliderScreensaver} timeout={5000}>
+            <div>Count: {count}</div>
+        </ScreensaverManager>
+    );
 }
 ```
 
 ## Next Steps
 
 1. **Test with SimpleTestScreensaver first**
-   - If this works → The issue is with ImageSliderScreensaver CSS
-   - If this blinks too → The issue is with the manager or your app setup
+    - If this works → The issue is with ImageSliderScreensaver CSS
+    - If this blinks too → The issue is with the manager or your app setup
 
 2. **Use ScreensaverManagerDebug**
-   - Check console logs to see what's happening
-   - Look for rapid state changes
+    - Check console logs to see what's happening
+    - Look for rapid state changes
 
 3. **Share the console output**
-   - Let me know what you see in the debug logs
-   - This will help identify the exact issue
+    - Let me know what you see in the debug logs
+    - This will help identify the exact issue
 
 ## Expected Behavior
 

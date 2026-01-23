@@ -9,24 +9,21 @@ I've added comprehensive debug logging to help identify the exact cause.
 ### In your test app:
 
 ```tsx
-import {
-  ScreensaverManager,
-  SimpleTestScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManager, SimpleTestScreensaver } from '@mohamedfariz/react-idle-screensaver';
 
 function App() {
-  return (
-    <ScreensaverManager
-      component={SimpleTestScreensaver}
-      timeout={5000}
-      debug={true} // ← Enable debug mode
-    >
-      <div style={{ padding: "2rem" }}>
-        <h1>Testing Screensaver</h1>
-        <p>Open browser console and wait 5 seconds...</p>
-      </div>
-    </ScreensaverManager>
-  );
+    return (
+        <ScreensaverManager
+            component={SimpleTestScreensaver}
+            timeout={5000}
+            debug={true} // ← Enable debug mode
+        >
+            <div style={{ padding: '2rem' }}>
+                <h1>Testing Screensaver</h1>
+                <p>Open browser console and wait 5 seconds...</p>
+            </div>
+        </ScreensaverManager>
+    );
 }
 ```
 
@@ -99,12 +96,12 @@ Check if your app has event listeners that might interfere:
 ```tsx
 // BAD - This might trigger during screensaver
 useEffect(() => {
-  const handler = () => {
-    // This might cause state changes
-    doSomething();
-  };
-  window.addEventListener("mousemove", handler);
-  return () => window.removeEventListener("mousemove", handler);
+    const handler = () => {
+        // This might cause state changes
+        doSomething();
+    };
+    window.addEventListener('mousemove', handler);
+    return () => window.removeEventListener('mousemove', handler);
 }, []);
 ```
 
@@ -115,9 +112,9 @@ In development, React Strict Mode causes double-renders. This is normal but migh
 ```tsx
 // In your index.tsx or main.tsx
 <React.StrictMode>
-  {" "}
-  {/* Remove this temporarily to test */}
-  <App />
+    {' '}
+    {/* Remove this temporarily to test */}
+    <App />
 </React.StrictMode>
 ```
 
@@ -128,7 +125,7 @@ Check if any CSS is causing layout shifts:
 ```css
 /* BAD - This might cause reflows */
 * {
-  transition: all 0.3s;
+    transition: all 0.3s;
 }
 ```
 

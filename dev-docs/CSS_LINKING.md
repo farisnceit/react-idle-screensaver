@@ -11,17 +11,17 @@ The test-app now imports the CSS directly from the plugin's dist folder.
 ### **File:** `test-app/src/main.jsx`
 
 ```jsx
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import '@farizbytes/react-idle-screensaver/dist/index.esm.css' // ✅ Plugin CSS
-import App from './App.tsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import '@mohamedfariz/react-idle-screensaver/dist/index.esm.css'; // ✅ Plugin CSS
+import App from './App.tsx';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <StrictMode>
+        <App />
+    </StrictMode>,
+);
 ```
 
 ---
@@ -29,11 +29,13 @@ createRoot(document.getElementById('root')).render(
 ## 🎯 **What This Does**
 
 The import statement:
+
 ```jsx
-import '@farizbytes/react-idle-screensaver/dist/index.esm.css'
+import '@farizbytes/react-idle-screensaver/dist/index.esm.css';
 ```
 
 **Loads all screensaver styles including:**
+
 - `.ris-starfield` - Starfield screensaver container
 - `.ris-slider` - Image slider container
 - `.ris-slide` - Individual slide animations
@@ -47,31 +49,36 @@ import '@farizbytes/react-idle-screensaver/dist/index.esm.css'
 ## 🔄 **How It Works**
 
 1. **Package builds CSS:**
-   ```bash
-   cd f:\farudesigns\plugins\react-idle-screensaver
-   npm run build
-   ```
-   This creates `dist/index.esm.css` (910 bytes, minified)
+
+    ```bash
+    cd f:\farudesigns\plugins\react-idle-screensaver
+    npm run build
+    ```
+
+    This creates `dist/index.esm.css` (910 bytes, minified)
 
 2. **Test-app references package:**
-   ```json
-   "@farizbytes/react-idle-screensaver": "file:.."
-   ```
+
+    ```json
+    "@mohamedfariz/react-idle-screensaver": "file:.."
+    ```
 
 3. **Vite resolves the import:**
-   - Finds the CSS in `node_modules/@farizbytes/react-idle-screensaver/dist/index.esm.css`
-   - Processes and injects it into the page
+    - Finds the CSS in `node_modules/@mohamedfariz/react-idle-screensaver/dist/index.esm.css`
+    - Processes and injects it into the page
 
 4. **Styles are applied:**
-   - All screensaver components get their styles
-   - No manual CSS copying needed
+    - All screensaver components get their styles
+    - No manual CSS copying needed
 
 ---
 
 ## 🎨 **Screensavers Using These Styles**
 
 ### **ImageSliderScreensaver**
+
 Uses classes:
+
 - `.ris-slider` - Container
 - `.ris-slide` - Slides with fade/zoom transitions
 - `.ris-overlay-gradient` - Dark gradient overlay
@@ -80,10 +87,13 @@ Uses classes:
 - `.ris-footer` - Footer text
 
 ### **StarfieldScreensaver**
+
 Uses classes:
+
 - `.ris-starfield` - Canvas container
 
 ### **Other Screensavers**
+
 - **SimpleTestScreensaver** - Inline styles (no CSS needed)
 - **MatrixScreensaver** - Canvas-based (no CSS needed)
 - **BouncingScreensaver** - Inline styles (no CSS needed)
@@ -95,27 +105,31 @@ Uses classes:
 ### **When You Make CSS Changes:**
 
 1. **Edit source CSS:**
-   ```
-   src/styles/image-slider.css
-   src/styles/starfield.css
-   ```
+
+    ```
+    src/styles/image-slider.css
+    src/styles/starfield.css
+    ```
 
 2. **Rebuild the package:**
-   ```bash
-   npm run build
-   ```
+
+    ```bash
+    npm run build
+    ```
 
 3. **Reinstall in test-app** (with `file:..` setup):
-   ```bash
-   cd test-app
-   npm install
-   ```
+
+    ```bash
+    cd test-app
+    npm install
+    ```
 
 4. **Vite auto-reloads** - Changes appear immediately!
 
 ### **For Live Development:**
 
 Use `npm run watch` in the package directory:
+
 ```bash
 # Terminal 1: Watch and rebuild on changes
 cd f:\farudesigns\plugins\react-idle-screensaver
@@ -144,10 +158,10 @@ Then reinstall in test-app when you see changes.
 1. Select **"Image Slider"** from dropdown
 2. Wait 5 seconds for screensaver
 3. Should see:
-   - ✅ Smooth fade/zoom transitions
-   - ✅ Gradient overlay
-   - ✅ Clock in top-right
-   - ✅ Footer at bottom
+    - ✅ Smooth fade/zoom transitions
+    - ✅ Gradient overlay
+    - ✅ Clock in top-right
+    - ✅ Footer at bottom
 
 ---
 
@@ -156,18 +170,18 @@ Then reinstall in test-app when you see changes.
 When consumers install your package from npm:
 
 ```bash
-npm install @farizbytes/react-idle-screensaver
+npm install @mohamedfariz/react-idle-screensaver
 ```
 
 They should import the CSS in their app:
 
 ```jsx
 // Option 1: Import in main entry file
-import '@farizbytes/react-idle-screensaver/dist/index.esm.css'
+import '@farizbytes/react-idle-screensaver/dist/index.esm.css';
 
 // Option 2: Let components auto-import (if using a bundler)
 // Just import the component - CSS comes with it
-import { ImageSliderScreensaver } from '@farizbytes/react-idle-screensaver'
+import { ImageSliderScreensaver } from '@mohamedfariz/react-idle-screensaver';
 ```
 
 ---
@@ -178,7 +192,7 @@ import { ImageSliderScreensaver } from '@farizbytes/react-idle-screensaver'
 ✅ **All screensaver styles** are loaded  
 ✅ **Vite handles** the CSS processing  
 ✅ **Auto-reloads** when CSS changes (after rebuild)  
-✅ **Production-ready** setup  
+✅ **Production-ready** setup
 
 ---
 

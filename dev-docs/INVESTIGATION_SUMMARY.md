@@ -40,24 +40,21 @@ npm run build
 ### Step 2: In Your Test App
 
 ```tsx
-import {
-  ScreensaverManager,
-  SimpleTestScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManager, SimpleTestScreensaver } from '@mohamedfariz/react-idle-screensaver';
 
 function App() {
-  return (
-    <ScreensaverManager
-      component={SimpleTestScreensaver}
-      timeout={5000}
-      debug={true} // ← Enable debug logging
-    >
-      <div style={{ padding: "2rem" }}>
-        <h1>Debug Test</h1>
-        <p>Open console (F12) and wait 5 seconds...</p>
-      </div>
-    </ScreensaverManager>
-  );
+    return (
+        <ScreensaverManager
+            component={SimpleTestScreensaver}
+            timeout={5000}
+            debug={true} // ← Enable debug logging
+        >
+            <div style={{ padding: '2rem' }}>
+                <h1>Debug Test</h1>
+                <p>Open console (F12) and wait 5 seconds...</p>
+            </div>
+        </ScreensaverManager>
+    );
 }
 ```
 
@@ -97,7 +94,7 @@ Since the issue persists even with SimpleTestScreensaver, the problem might be i
 ```tsx
 // In development, this causes double-renders:
 <React.StrictMode>
-  <App />
+    <App />
 </React.StrictMode>
 ```
 
@@ -118,9 +115,9 @@ Please share:
 1. **Console output** with `debug={true}` enabled
 2. **Your App component code** (the one using ScreensaverManager)
 3. **Blinking pattern**:
-   - Does it blink once when appearing?
-   - Does it blink continuously?
-   - Does it appear then disappear immediately?
+    - Does it blink once when appearing?
+    - Does it blink continuously?
+    - Does it appear then disappear immediately?
 4. **Browser**: Chrome, Firefox, Safari, Edge?
 5. **React version** in your test app
 6. **Are you using React Strict Mode?**

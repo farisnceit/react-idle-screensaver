@@ -1,10 +1,11 @@
 # React Idle Screensaver - Test Application
 
-This is a comprehensive test application for verifying the fixes to the blinking/flickering issue in the `@farizbytes/react-idle-screensaver` package.
+This is a comprehensive test application for verifying the fixes to the blinking/flickering issue in the `@mohamedfariz/react-idle-screensaver` package.
 
 ## 🎯 Purpose
 
 This test app was created to verify that the following issues have been resolved:
+
 1. ✅ Infinite re-render loops causing blinking
 2. ✅ Event listener re-initialization spam
 3. ✅ Rogue HTML elements causing rendering issues
@@ -48,17 +49,20 @@ npm run dev
 ## 🎨 Features
 
 ### Status Monitor
+
 - Real-time debug mode status
 - Idle timeout display
 - Activity event counter
 - Last event tracker
 
 ### Controls
+
 - 5 different screensaver types
 - Adjustable timeout (3-30 seconds)
 - Debug mode toggle
 
 ### Interactive Test Area
+
 - Text input for keyboard testing
 - Buttons for click testing
 - Mouse activity zone
@@ -70,8 +74,9 @@ See `VERIFICATION_REPORT.md` in the parent directory for complete test results.
 ## 🔧 Package Link
 
 This test app uses the local package via:
+
 ```json
-"@farizbytes/react-idle-screensaver": "file:.."
+"@mohamedfariz/react-idle-screensaver": "file:.."
 ```
 
 Any changes to the parent package will be reflected after rebuilding.

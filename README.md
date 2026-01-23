@@ -1,4 +1,4 @@
-# @farizbytes/react-idle-screensaver
+# @mohamedfariz/react-idle-screensaver
 
 A lightweight, TypeScript-first React library for detecting user inactivity and displaying customizable screensaver overlays.
 
@@ -23,41 +23,41 @@ Compatible with **React 18+** and designed to be **tree-shakable, SSR-safe, and 
 ## 📦 Installation
 
 ```bash
-npm install @farizbytes/react-idle-screensaver@beta
+npm install @mohamedfariz/react-idle-screensaver@beta
 ```
 
 or
 
 ```bash
-yarn add @farizbytes/react-idle-screensaver@beta
+yarn add @mohamedfariz/react-idle-screensaver@beta
 ```
 
 or
 
 ```bash
-pnpm add @farizbytes/react-idle-screensaver@beta
+pnpm add @mohamedfariz/react-idle-screensaver@beta
 ```
 
 or
 
 ```bash
-bun add @farizbytes/react-idle-screensaver@beta
+bun add @mohamedfariz/react-idle-screensaver@beta
 ```
 
 ## 🎨 Import CSS
 
 ```tsx
-import '@farizbytes/react-idle-screensaver/style.css';
+import '@mohamedfariz/react-idle-screensaver/style.css';
 ```
 
 ## Basic Usage
 
 ```tsx
-import { ScreensaverManager, BouncingScreensaver } from '@farizbytes/react-idle-screensaver';
+import { ScreensaverManager, MatrixScreensaver } from '@mohamedfariz/react-idle-screensaver';
 
 function App() {
     return (
-        <ScreensaverManager component={BouncingScreensaver} timeout={5000}>
+        <ScreensaverManager component={MatrixScreensaver} timeout={5000}>
             <div style={{ height: '100vh' }}>
                 <h1>My Application</h1>
             </div>
@@ -73,7 +73,7 @@ export default App;
 Create your own custom screensaver component and pass it to the `ScreensaverManager`:
 
 ```tsx
-import { ScreensaverManager } from '@farizbytes/react-idle-screensaver';
+import { ScreensaverManager } from '@mohamedfariz/react-idle-screensaver';
 
 const MyScreensaver = () => (
     <div
@@ -138,7 +138,7 @@ function App() {
 Access screensaver state and controls from within your custom component:
 
 ```tsx
-import { ScreensaverContext } from '@farizbytes/react-idle-screensaver';
+import { ScreensaverContext } from '@mohamedfariz/react-idle-screensaver';
 import { useContext } from 'react';
 
 const MyScreensaver = () => {
@@ -175,7 +175,7 @@ onScreenSaverStop	() => void	—	Callback when user resumes
 ## 🔧 Hook: useIdleTimer
 
 ```tsx
-import { useIdleTimer } from "@farizbytes/react-idle-screensaver";
+import { useIdleTimer } from "@mohamedfariz/react-idle-screensaver";
 
 const isIdle = useIdleTimer(timeout?, active?);
 ```

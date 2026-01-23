@@ -11,7 +11,7 @@ The `useIdleTimer` hook had a critical bug in the `resetTimer` function's depend
 ```typescript
 // BEFORE (BUGGY):
 const resetTimer = useCallback(() => {
-  // ... code ...
+    // ... code ...
 }, [idleTime, isIdle]); // ❌ isIdle in dependencies causes problems!
 ```
 
@@ -30,13 +30,13 @@ const resetTimer = useCallback(() => {
 const isIdleRef = useRef(false); // Track state in ref
 
 const resetTimer = useCallback(() => {
-  // Use ref instead of state for checking
-  if (isIdleRef.current && onActiveRef.current) {
-    onActiveRef.current();
-  }
-  isIdleRef.current = false;
-  setIsIdle(false);
-  // ... rest of code ...
+    // Use ref instead of state for checking
+    if (isIdleRef.current && onActiveRef.current) {
+        onActiveRef.current();
+    }
+    isIdleRef.current = false;
+    setIsIdle(false);
+    // ... rest of code ...
 }, [idleTime]); // ✅ Only idleTime in dependencies
 ```
 
@@ -67,37 +67,31 @@ const resetTimer = useCallback(() => {
 ### In your test app:
 
 ```tsx
-import {
-  ScreensaverManager,
-  SimpleTestScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManager, SimpleTestScreensaver } from '@farizbytes/react-idle-screensaver';
 
 function App() {
-  return (
-    <ScreensaverManager component={SimpleTestScreensaver} timeout={5000}>
-      <div>
-        <h1>Your App Content</h1>
-        <p>Wait 5 seconds to see screensaver...</p>
-      </div>
-    </ScreensaverManager>
-  );
+    return (
+        <ScreensaverManager component={SimpleTestScreensaver} timeout={5000}>
+            <div>
+                <h1>Your App Content</h1>
+                <p>Wait 5 seconds to see screensaver...</p>
+            </div>
+        </ScreensaverManager>
+    );
 }
 ```
 
 ### Or use the debug version:
 
 ```tsx
-import {
-  ScreensaverManagerDebug,
-  ImageSliderScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManagerDebug, ImageSliderScreensaver } from '@mohamedfariz/react-idle-screensaver';
 
 function App() {
-  return (
-    <ScreensaverManagerDebug component={ImageSliderScreensaver} timeout={5000}>
-      <div>Your content here</div>
-    </ScreensaverManagerDebug>
-  );
+    return (
+        <ScreensaverManagerDebug component={ImageSliderScreensaver} timeout={5000}>
+            <div>Your content here</div>
+        </ScreensaverManagerDebug>
+    );
 }
 ```
 

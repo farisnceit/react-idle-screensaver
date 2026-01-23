@@ -9,24 +9,21 @@ The screensaver overlay div is **not appearing in the DOM at all**. This means `
 ### In your test app, use this code with debug enabled:
 
 ```tsx
-import {
-  ScreensaverManager,
-  SimpleTestScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManager, SimpleTestScreensaver } from '@mohamedfariz/react-idle-screensaver';
 
 function App() {
-  return (
-    <ScreensaverManager
-      component={SimpleTestScreensaver}
-      timeout={5000}
-      debug={true} // IMPORTANT: Enable debug
-    >
-      <div style={{ padding: "2rem" }}>
-        <h1>Debug Test</h1>
-        <p>Open console and wait 5 seconds...</p>
-      </div>
-    </ScreensaverManager>
-  );
+    return (
+        <ScreensaverManager
+            component={SimpleTestScreensaver}
+            timeout={5000}
+            debug={true} // IMPORTANT: Enable debug
+        >
+            <div style={{ padding: '2rem' }}>
+                <h1>Debug Test</h1>
+                <p>Open console and wait 5 seconds...</p>
+            </div>
+        </ScreensaverManager>
+    );
 }
 ```
 
@@ -74,7 +71,7 @@ cd d:\Plugins\react-idle-screensaver
 npm run build
 
 # Then in your test app
-npm unlink @farizbytes/react-idle-screensaver
+npm unlink @mohamedfariz/react-idle-screensaver
 npm link d:\Plugins\react-idle-screensaver
 
 # Restart your dev server
@@ -96,13 +93,13 @@ When screensaver should be active, look for this in DOM:
 
 ```html
 <div
-  class="screensaver-overlay"
-  data-screensaver-active="true"
-  data-is-idle="true"
-  data-should-show="true"
-  style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999; background-color: rgba(255, 0, 0, 0.1);"
+    class="screensaver-overlay"
+    data-screensaver-active="true"
+    data-is-idle="true"
+    data-should-show="true"
+    style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 9999; background-color: rgba(255, 0, 0, 0.1);"
 >
-  <!-- SimpleTestScreensaver content -->
+    <!-- SimpleTestScreensaver content -->
 </div>
 ```
 
@@ -123,6 +120,6 @@ With `debug={true}`:
 2. Open browser console
 3. Wait 5 seconds without moving mouse
 4. Share:
-   - All console output
-   - Screenshot of inspect element
-   - Whether you see the red tint overlay
+    - All console output
+    - Screenshot of inspect element
+    - Whether you see the red tint overlay

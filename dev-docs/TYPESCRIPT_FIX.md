@@ -5,7 +5,7 @@
 After adding new exports (`SimpleTestScreensaver`, `ScreensaverManagerDebug`), TypeScript in your test app shows:
 
 ```
-Module '"@farizbytes/react-idle-screensaver"' has no exported member 'SimpleTestScreensaver'.
+Module '"@mohamedfariz/react-idle-screensaver"' has no exported member 'SimpleTestScreensaver'.
 ```
 
 ## Solution
@@ -24,7 +24,7 @@ In your test app directory:
 
 ```bash
 # Unlink the package
-npm unlink @farizbytes/react-idle-screensaver
+npm unlink @mohamedfariz/react-idle-screensaver
 
 # Re-link it
 npm link d:\Plugins\react-idle-screensaver
@@ -58,10 +58,10 @@ After trying one of the above, check if the import works:
 
 ```tsx
 import {
-  ScreensaverManager,
-  SimpleTestScreensaver, // ✅ Should work now
-  ScreensaverManagerDebug, // ✅ Should work now
-} from "@farizbytes/react-idle-screensaver";
+    ScreensaverManager,
+    SimpleTestScreensaver, // ✅ Should work now
+    ScreensaverManagerDebug, // ✅ Should work now
+} from '@farizbytes/react-idle-screensaver';
 ```
 
 ## Quick Test Code
@@ -69,20 +69,17 @@ import {
 Once TypeScript recognizes the exports, use this to test:
 
 ```tsx
-import {
-  ScreensaverManager,
-  SimpleTestScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManager, SimpleTestScreensaver } from '@mohamedfariz/react-idle-screensaver';
 
 function App() {
-  return (
-    <ScreensaverManager component={SimpleTestScreensaver} timeout={5000}>
-      <div style={{ padding: "2rem" }}>
-        <h1>Testing Screensaver</h1>
-        <p>Don't move your mouse for 5 seconds...</p>
-      </div>
-    </ScreensaverManager>
-  );
+    return (
+        <ScreensaverManager component={SimpleTestScreensaver} timeout={5000}>
+            <div style={{ padding: '2rem' }}>
+                <h1>Testing Screensaver</h1>
+                <p>Don't move your mouse for 5 seconds...</p>
+            </div>
+        </ScreensaverManager>
+    );
 }
 
 export default App;

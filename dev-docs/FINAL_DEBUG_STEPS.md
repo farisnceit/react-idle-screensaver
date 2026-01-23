@@ -27,37 +27,29 @@ npm run dev
 ### Step 2: Use This Exact Code
 
 ```tsx
-import {
-  ScreensaverManager,
-  SimpleTestScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManager, SimpleTestScreensaver } from '@mohamedfariz/react-idle-screensaver';
 
 function App() {
-  console.log("App component rendered");
+    console.log('App component rendered');
 
-  return (
-    <div>
-      <ScreensaverManager
-        component={SimpleTestScreensaver}
-        timeout={5000}
-        debug={true}
-      >
-        <div
-          style={{
-            padding: "2rem",
-            minHeight: "100vh",
-            backgroundColor: "#f0f0f0",
-          }}
-        >
-          <h1>Screensaver Debug Test</h1>
-          <p>1. Open browser console (F12)</p>
-          <p>2. Don't move your mouse for 5 seconds</p>
-          <p>3. You should see a RED TINT overlay appear</p>
-          <p>4. Check console for debug logs</p>
+    return (
+        <div>
+            <ScreensaverManager component={SimpleTestScreensaver} timeout={5000} debug={true}>
+                <div
+                    style={{
+                        padding: '2rem',
+                        minHeight: '100vh',
+                        backgroundColor: '#f0f0f0',
+                    }}>
+                    <h1>Screensaver Debug Test</h1>
+                    <p>1. Open browser console (F12)</p>
+                    <p>2. Don't move your mouse for 5 seconds</p>
+                    <p>3. You should see a RED TINT overlay appear</p>
+                    <p>4. Check console for debug logs</p>
+                </div>
+            </ScreensaverManager>
         </div>
-      </ScreensaverManager>
-    </div>
-  );
+    );
 }
 
 export default App;
@@ -98,15 +90,15 @@ Right-click → Inspect. Look for:
 
 ```html
 <div
-  class="screensaver-overlay"
-  data-screensaver-active="true"
-  data-is-idle="true"
-  data-should-show="true"
-  style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: 9999; background-color: rgba(255, 0, 0, 0.1);"
+    class="screensaver-overlay"
+    data-screensaver-active="true"
+    data-is-idle="true"
+    data-should-show="true"
+    style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: 9999; background-color: rgba(255, 0, 0, 0.1);"
 >
-  <div style="position: fixed; ...">
-    <!-- SimpleTestScreensaver content -->
-  </div>
+    <div style="position: fixed; ...">
+        <!-- SimpleTestScreensaver content -->
+    </div>
 </div>
 ```
 
@@ -122,7 +114,7 @@ Right-click → Inspect. Look for:
 npm run build
 
 # In your test app
-npm unlink @farizbytes/react-idle-screensaver
+npm unlink @mohamedfariz/react-idle-screensaver
 npm link d:\Plugins\react-idle-screensaver
 # Restart dev server
 ```
@@ -169,11 +161,11 @@ If it still doesn't work, please share:
 2. **Screenshot of inspect element** showing the DOM
 3. **Your App component code**
 4. **Answer these**:
-   - Do you see "App component rendered"?
-   - Do you see any useIdleTimer logs?
-   - Do you see "Idle timeout reached"?
-   - Do you see the red tint overlay?
-   - Does the div appear in inspect element?
+    - Do you see "App component rendered"?
+    - Do you see any useIdleTimer logs?
+    - Do you see "Idle timeout reached"?
+    - Do you see the red tint overlay?
+    - Does the div appear in inspect element?
 
 ## ✨ Expected Success
 

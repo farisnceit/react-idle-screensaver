@@ -6,8 +6,8 @@ import {
     MatrixScreensaver,
     StarfieldScreensaver,
     BouncingScreensaver,
-} from '@farizbytes/react-idle-screensaver';
-import '@farizbytes/react-idle-screensaver/style.css';
+} from '@mohamedfariz/react-idle-screensaver';
+import '@mohamedfariz/react-idle-screensaver/style.css';
 import './App.css';
 
 const sampleImages = [
@@ -151,7 +151,7 @@ function App() {
                         📦 GitHub
                     </a>
                     <a
-                        href='https://www.npmjs.com/package/@farizbytes/react-idle-screensaver'
+                        href='https://www.npmjs.com/package/@mohamedfariz/react-idle-screensaver'
                         target='_blank'
                         rel='noopener noreferrer'
                         className='sidebar-link'>
@@ -186,13 +186,13 @@ function App() {
                                     className='copy-btn'
                                     onClick={() =>
                                         navigator.clipboard.writeText(
-                                            'npm install @farizbytes/react-idle-screensaver',
+                                            'npm install @mohamedfariz/react-idle-screensaver',
                                         )
                                     }>
                                     📋 Copy
                                 </button>
                             </div>
-                            <code>npm install @farizbytes/react-idle-screensaver</code>
+                            <code>npm install @mohamedfariz/react-idle-screensaver</code>
                         </div>
                         <div className='code-block'>
                             <div className='code-header'>
@@ -201,13 +201,13 @@ function App() {
                                     className='copy-btn'
                                     onClick={() =>
                                         navigator.clipboard.writeText(
-                                            'yarn add @farizbytes/react-idle-screensaver',
+                                            'yarn add @mohamedfariz/react-idle-screensaver',
                                         )
                                     }>
                                     📋 Copy
                                 </button>
                             </div>
-                            <code>yarn add @farizbytes/react-idle-screensaver</code>
+                            <code>yarn add @mohamedfariz/react-idle-screensaver</code>
                         </div>
                         <div className='code-block'>
                             <div className='code-header'>
@@ -216,13 +216,13 @@ function App() {
                                     className='copy-btn'
                                     onClick={() =>
                                         navigator.clipboard.writeText(
-                                            'pnpm add @farizbytes/react-idle-screensaver',
+                                            'pnpm add @mohamedfariz/react-idle-screensaver',
                                         )
                                     }>
                                     📋 Copy
                                 </button>
                             </div>
-                            <code>pnpm add @farizbytes/react-idle-screensaver</code>
+                            <code>pnpm add @mohamedfariz/react-idle-screensaver</code>
                         </div>
                     </div>
                 </section>
@@ -231,8 +231,8 @@ function App() {
                 <section id='quick-start' className='section quick-start-section'>
                     <h2>🚀 Quick Start</h2>
                     <div className='code-example'>
-                        <pre>{`import { ScreensaverManager, BouncingScreensaver } from '@farizbytes/react-idle-screensaver'
-import '@farizbytes/react-idle-screensaver/style.css'
+                        <pre>{`import { ScreensaverManager, BouncingScreensaver } from '@mohamedfariz/react-idle-screensaver'
+import '@mohamedfariz/react-idle-screensaver/style.css'
 
 function App() {
   return (
@@ -826,7 +826,7 @@ function App() {
                         </a>
                         {' • '}
                         <a
-                            href='https://www.npmjs.com/package/@farizbytes/react-idle-screensaver'
+                            href='https://www.npmjs.com/package/@mohamedfariz/react-idle-screensaver'
                             target='_blank'
                             rel='noopener noreferrer'>
                             📚 View on NPM
