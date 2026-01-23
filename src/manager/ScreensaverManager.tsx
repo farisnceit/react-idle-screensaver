@@ -15,7 +15,7 @@ export function ScreensaverManager<
   onScreenSaverStop,
   debug = false,
 }: ScreensaverManagerProps<T>) {
-  const { isIdle } = useIdleTimer({idleTime: timeout, debug});
+  const { isIdle } = useIdleTimer({ idleTime: timeout, debug });
   const shouldShow = active && isIdle;
   const wasShowing = useRef(false);
 
@@ -30,41 +30,37 @@ export function ScreensaverManager<
     wasShowing.current = shouldShow;
   }, [shouldShow, onScreenSaverStop]);
 
-  // Don't render screensaver in a nested div - render at root level
-  if (!shouldShow) {
-    return (
-      <ScreensaverContext.Provider value={{ isIdle }}>
-        {children}
-      </ScreensaverContext.Provider>
-    );
-  }
-
-  if (debug) {
+  if (debug && shouldShow) {
     console.log('[ScreensaverManager] Rendering screensaver overlay');
   }
 
   return (
     <ScreensaverContext.Provider value={{ isIdle }}>
-      <div style={{ filter: "blur(4px)" }}>
+      {/* Always render children to preserve component state and form inputs */}
+      <div style={{ filter: shouldShow ? "blur(4px)" : "none" }}>
         {children}
       </div>
-      <div 
-        className="screensaver-overlay"
-        data-screensaver-active="true"
-        data-is-idle={isIdle.toString()}
-        data-should-show={shouldShow.toString()}
-        style={{ 
-          position: "fixed", 
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex,
-          backgroundColor: debug ? 'rgba(255,0,0,0.1)' : undefined, // Red tint in debug mode
-        }}
-      >
-        <ScreensaverComponent {...(componentProps as T)} />
-      </div>
+
+      {/* Conditionally render screensaver overlay */}
+      {shouldShow && (
+        <div
+          className="screensaver-overlay"
+          data-screensaver-active="true"
+          data-is-idle={isIdle.toString()}
+          data-should-show={shouldShow.toString()}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex,
+            backgroundColor: debug ? 'rgba(255,0,0,0.1)' : undefined, // Red tint in debug mode
+          }}
+        >
+          <ScreensaverComponent {...(componentProps as T)} />
+        </div>
+      )}
     </ScreensaverContext.Provider>
   );
 }
