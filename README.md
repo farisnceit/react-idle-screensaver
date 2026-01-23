@@ -23,44 +23,46 @@ Compatible with **React 18+** and designed to be **tree-shakable, SSR-safe, and 
 ## 📦 Installation
 
 ```bash
-npm install @farizbytes/react-idle-screensaver
-
-
-or
-
-yarn add @farizbytes/react-idle-screensaver
+npm install @farizbytes/react-idle-screensaver@beta
+```
 
 or
 
-pnpm add @farizbytes/react-idle-screensaver
+```bash
+yarn add @farizbytes/react-idle-screensaver@beta
+```
 
 or
 
-bun add @farizbytes/react-idle-screensaver
+```bash
+pnpm add @farizbytes/react-idle-screensaver@beta
+```
+
+or
+
+```bash
+bun add @farizbytes/react-idle-screensaver@beta
 ```
 
 ## 🎨 Import CSS
 
 ```tsx
-import "@farizbytes/react-idle-screensaver/style.css";
+import '@farizbytes/react-idle-screensaver/style.css';
 ```
 
 ## Basic Usage
 
 ```tsx
-import {
-  ScreensaverManager,
-  BouncingScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManager, BouncingScreensaver } from '@farizbytes/react-idle-screensaver';
 
 function App() {
-  return (
-    <ScreensaverManager component={BouncingScreensaver} timeout={5000}>
-      <div style={{ height: "100vh" }}>
-        <h1>My Application</h1>
-      </div>
-    </ScreensaverManager>
-  );
+    return (
+        <ScreensaverManager component={BouncingScreensaver} timeout={5000}>
+            <div style={{ height: '100vh' }}>
+                <h1>My Application</h1>
+            </div>
+        </ScreensaverManager>
+    );
 }
 
 export default App;
@@ -68,21 +70,86 @@ export default App;
 
 ## 🧩 Using a Custom Screensaver
 
+Create your own custom screensaver component and pass it to the `ScreensaverManager`:
+
 ```tsx
-import {
-  ScreensaverManager,
-  BouncingScreensaver,
-} from "@farizbytes/react-idle-screensaver";
+import { ScreensaverManager } from '@farizbytes/react-idle-screensaver';
 
 const MyScreensaver = () => (
-  <div style={{ color: "white" }}>Custom Screensaver</div>
+    <div
+        style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100vh',
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            color: 'white',
+            fontSize: '3rem',
+            fontWeight: 'bold',
+        }}>
+        Custom Screensaver Content
+    </div>
 );
 
 function App() {
-  return <ScreensaverManager component={MyScreensaver} timeout={10000} />;
+    return <ScreensaverManager component={MyScreensaver} timeout={10000} />;
 }
 
 export default App;
+```
+
+### Passing Props to Custom Screensaver
+
+You can pass custom props to your screensaver component:
+
+```tsx
+interface CustomScreensaverProps {
+    message: string;
+    showLogo?: boolean;
+}
+
+const MyScreensaver: React.FC<CustomScreensaverProps> = ({ message, showLogo }) => (
+    <div className='custom-screensaver'>
+        {showLogo && (
+            <svg width='80' height='80' viewBox='0 0 80 80'>
+                <rect width='80' height='80' fill='#667eea' rx='8' />
+            </svg>
+        )}
+        <h1>{message}</h1>
+    </div>
+);
+
+function App() {
+    return (
+        <ScreensaverManager
+            component={MyScreensaver}
+            componentProps={{
+                message: 'Welcome to Our Kiosk',
+                showLogo: true,
+            }}
+            timeout={10000}
+        />
+    );
+}
+```
+
+### Using Screensaver Context
+
+Access screensaver state and controls from within your custom component:
+
+```tsx
+import { ScreensaverContext } from '@farizbytes/react-idle-screensaver';
+import { useContext } from 'react';
+
+const MyScreensaver = () => {
+    const { stopScreensaver } = useContext(ScreensaverContext);
+
+    return (
+        <div onClick={stopScreensaver}>
+            <h1>Tap to Continue</h1>
+        </div>
+    );
+};
 ```
 
 ## 🛠 Built-in Screensavers
