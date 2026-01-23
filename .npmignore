@@ -1,0 +1,33 @@
+# Source files (already built in dist/)
+src/
+test-app/
+demo-app/
+
+# Documentation (keep only README and LICENSE)
+*.md
+!README.md
+!LICENSE
+
+# Config files
+tsconfig.json
+rollup.config.mjs
+eslint.config.*
+vite.config.*
+
+# Build artifacts and logs
+build-errors.txt
+*.log
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Testing
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx

@@ -1,85 +1,96 @@
 {
-  "name": "@farizbytes/react-idle-screensaver",
-  "version": "0.1.0",
-  "description": "A lightweight React component and hook for detecting user inactivity and displaying a customizable idle screensaver. Ideal for kiosks, dashboards, TVs, and unattended React applications. Fully typed and compatible with React 18+",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
-  "type": "module",
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
+    "name": "@mohamedfariz/react-idle-screensaver",
+    "version": "0.1.0-beta.0",
+    "description": "A lightweight React component and hook for detecting user inactivity and displaying a customizable idle screensaver. Ideal for kiosks, dashboards, TVs, and unattended React applications. Fully typed and compatible with React 18+",
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/types/index.d.ts",
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/types/index.d.ts",
+            "import": "./dist/index.esm.js",
+            "require": "./dist/index.cjs.js"
+        },
+        "./style.css": "./dist/index.esm.css",
+        "./dist/*.css": "./dist/*.css"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build:types": "tsc -p tsconfig.json",
+        "build:js": "rollup -c",
+        "build": "npm run build:types && npm run build:js",
+        "watch": "rollup -c -w",
+        "lint": "eslint .",
+        "lint:fix": "npx eslint . --fix",
+        "prepublishOnly": "npm run lint && npm run build"
+    },
+    "peerDependencies": {
+        "lucide-react": "^0.562.0",
+        "react": ">=18",
+        "react-dom": ">=18"
+    },
+    "devDependencies": {
+        "@rollup/plugin-commonjs": "latest",
+        "@rollup/plugin-node-resolve": "latest",
+        "@rollup/plugin-terser": "^0.4.4",
+        "@rollup/plugin-typescript": "latest",
+        "@types/react": "^19.2.7",
+        "autoprefixer": "^10.4.23",
+        "eslint": "^9.39.2",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^7.0.1",
+        "eslint-plugin-react-refresh": "^0.4.26",
+        "postcss": "^8.5.6",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0",
+        "rollup": "latest",
+        "rollup-plugin-dts": "latest",
+        "rollup-plugin-peer-deps-external": "latest",
+        "rollup-plugin-postcss": "^4.0.2",
+        "typescript": "latest",
+        "typescript-eslint": "^8.52.0"
+    },
+    "homepage": "https://github.com/farisnceit/react-idle-screensaver",
+    "keywords": [
+        "react",
+        "react-component",
+        "react-hook",
+        "screensaver",
+        "idle",
+        "idle-detection",
+        "user-inactivity",
+        "kiosk",
+        "kiosk-mode",
+        "digital-signage",
+        "dashboard",
+        "tv-app",
+        "unattended-ui",
+        "typescript",
+        "react-18",
+        "react-19"
+    ],
+    "overrides": {
+        "lucide-react": {
+            "peerDependencies": {
+                "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+                "react-dom": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0"
+            }
+        }
+    },
+    "author": {
+        "name": "M Mohamed Fariz",
+        "url": "https://farizbytes.com/contact",
+        "email": "faris872010@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/farisnceit/react-idle-screensaver"
+    },
+    "license": "ISC",
+    "dependencies": {
+        "tslib": "^2.8.1"
     }
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build:types": "tsc -p tsconfig.json",
-    "build:js": "rollup -c",
-    "build": "npm run build:types && npm run build:js",
-    "watch": "rollup -c -w",
-    "lint": "eslint .",
-    "lint:fix": "npx eslint . --fix",
-    "prepublishOnly": "npm run lint && npm run build"
-  },
-  "peerDependencies": {
-    "lucide-react": "^0.260.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "latest",
-    "@rollup/plugin-node-resolve": "latest",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "latest",
-    "@types/react": "^19.2.7",
-    "autoprefixer": "^10.4.23",
-    "eslint": "^9.39.2",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.4.26",
-    "postcss": "^8.5.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rollup": "latest",
-    "rollup-plugin-dts": "latest",
-    "rollup-plugin-peer-deps-external": "latest",
-    "rollup-plugin-postcss": "^4.0.2",
-    "typescript": "latest",
-    "typescript-eslint": "^8.52.0"
-  },
-  "homepage": "https://github.com/farisnceit/react-idle-screensaver",
-  "keywords": [
-    "react",
-    "react-component",
-    "react-hook",
-    "screensaver",
-    "idle",
-    "idle-detection",
-    "user-inactivity",
-    "kiosk",
-    "kiosk-mode",
-    "digital-signage",
-    "dashboard",
-    "tv-app",
-    "unattended-ui",
-    "typescript",
-    "react-18"
-  ],
-  "author": {
-    "name": "M Mohamed Fariz",
-    "url": "https://farizbytes.com/contact",
-    "email": "faris872010@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/farisnceit/react-idle-screensaver"
-  },
-  "license": "ISC",
-  "dependencies": {
-    "tslib": "^2.8.1"
-  }
 }
