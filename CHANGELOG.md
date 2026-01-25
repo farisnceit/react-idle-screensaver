@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.4] - 2026-01-25
+
+### Added
+
+- UMD build format for CDN usage (`dist/index.umd.js`)
+- Global variable `ReactIdleScreensaver` for browser environments
+- lucide-react CDN dependency documentation for BouncingScreensaver support
+
+### Changed
+
+- Updated rollup configuration to include UMD output format
+- Enhanced CDN examples to include lucide-react dependency
+- Updated CDN HTML example with proper lucide-react script tag
+
+### Fixed
+
+- CDN usage now properly exports all components and hooks via `window.ReactIdleScreensaver`
+- Proper external dependency configuration for UMD build (React, ReactDOM, lucide-react)
+
 ## [0.2.3] - 2026-01-25
 
 ### Added
@@ -73,6 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Customizable appearance and behavior
 - Debug mode for development
 
-[0.3.0]: https://github.com/farisnceit/react-idle-screensaver/releases/tag/v0.3.0
+[0.2.4]: https://github.com/farisnceit/react-idle-screensaver/releases/tag/v0.2.4
+[0.2.3]: https://github.com/farisnceit/react-idle-screensaver/releases/tag/v0.2.3
 [0.2.0]: https://github.com/farisnceit/react-idle-screensaver/releases/tag/v0.2.0
 [0.1.0]: https://github.com/farisnceit/react-idle-screensaver/releases/tag/v0.1.0

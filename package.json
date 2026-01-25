@@ -4,13 +4,16 @@
     "description": "A lightweight React component and hook for detecting user inactivity and displaying a customizable idle screensaver. Ideal for kiosks, dashboards, TVs, and unattended React applications. Fully typed and compatible with React 18+",
     "main": "dist/index.cjs.js",
     "module": "dist/index.esm.js",
+    "unpkg": "dist/index.umd.js",
+    "jsdelivr": "dist/index.umd.js",
     "types": "dist/types/index.d.ts",
     "type": "module",
     "exports": {
         ".": {
             "types": "./dist/types/index.d.ts",
             "import": "./dist/index.esm.js",
-            "require": "./dist/index.cjs.js"
+            "require": "./dist/index.cjs.js",
+            "browser": "./dist/index.umd.js"
         },
         "./style.css": "./dist/index.esm.css",
         "./dist/*.css": "./dist/*.css"
@@ -89,7 +92,7 @@
         "type": "git",
         "url": "https://github.com/farisnceit/react-idle-screensaver"
     },
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "tslib": "^2.8.1"
     }

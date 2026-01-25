@@ -57,6 +57,9 @@ You can use the library directly in the browser without a build tool:
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
+<!-- Lucide React (required for BouncingScreensaver) -->
+<script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
+
 <!-- React Idle Screensaver -->
 <link rel="stylesheet" href="https://unpkg.com/@mohamedfariz/react-idle-screensaver/dist/style.css" />
 <script src="https://unpkg.com/@mohamedfariz/react-idle-screensaver/dist/index.umd.js"></script>
@@ -68,6 +71,9 @@ You can use the library directly in the browser without a build tool:
 <!-- React and ReactDOM (peer dependencies) -->
 <script crossorigin src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+
+<!-- Lucide React (required for BouncingScreensaver) -->
+<script src="https://cdn.jsdelivr.net/npm/lucide-react@latest/dist/umd/lucide-react.js"></script>
 
 <!-- React Idle Screensaver -->
 <link
@@ -96,6 +102,9 @@ You can use the library directly in the browser without a build tool:
         <!-- React -->
         <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+        <!-- Lucide React (required for BouncingScreensaver) -->
+        <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.js"></script>
 
         <!-- React Idle Screensaver -->
         <script src="https://unpkg.com/@mohamedfariz/react-idle-screensaver/dist/index.umd.js"></script>
