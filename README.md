@@ -20,6 +20,16 @@ Compatible with **React 18+** and designed to be **tree-shakable, SSR-safe, and 
 
 ---
 
+## 🎮 Live Demo
+
+Try out the library in a live CodeSandbox environment:
+
+**[🚀 View Interactive Demo](https://codesandbox.io/p/sandbox/8frqs2)**
+
+Explore all built-in screensavers and customize settings in real-time.
+
+---
+
 ## 📦 Installation
 
 ### Via Package Manager (Recommended)
