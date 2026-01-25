@@ -23,25 +23,25 @@ Compatible with **React 18+** and designed to be **tree-shakable, SSR-safe, and 
 ## 📦 Installation
 
 ```bash
-npm install @mohamedfariz/react-idle-screensaver@beta
+npm install @mohamedfariz/react-idle-screensaver
 ```
 
 or
 
 ```bash
-yarn add @mohamedfariz/react-idle-screensaver@beta
+yarn add @mohamedfariz/react-idle-screensaver
 ```
 
 or
 
 ```bash
-pnpm add @mohamedfariz/react-idle-screensaver@beta
+pnpm add @mohamedfariz/react-idle-screensaver
 ```
 
 or
 
 ```bash
-bun add @mohamedfariz/react-idle-screensaver@beta
+bun add @mohamedfariz/react-idle-screensaver
 ```
 
 ## 🎨 Import CSS

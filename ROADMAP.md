@@ -14,11 +14,11 @@ This document outlines the planned features and improvements for @farizbytes/rea
 - ✅ TypeScript support
 - ✅ React 18/19 compatibility
 - ✅ Context-based state management
-- 🔄 Beta testing and bug fixes
+- ✅ Stable release testing and bug fixes
 - 🔄 Documentation improvements
 - 🔄 Example demos and integration guides
 
-## Version 0.2.0 (Enhanced Screensavers) 🎨
+## Version 0.5.0 (Enhanced Screensavers) 🎨
 
 ### New Built-in Screensavers
 
@@ -37,7 +37,7 @@ This document outlines the planned features and improvements for @farizbytes/rea
 - [ ] Customizable screensaver duration per type
 - [ ] Screensaver priority/weight system
 
-## Version 0.3.0 (Advanced Features) ⚡
+## Version 1.0.0 (Advanced Features) ⚡
 
 ### Core Improvements
 
@@ -56,7 +56,7 @@ This document outlines the planned features and improvements for @farizbytes/rea
 - [ ] Enhanced debug mode with detailed logs
 - [ ] TypeScript strict mode compliance
 
-## Version 0.4.0 (Enterprise Features) 🏢
+## Version 2.0.0 (Enterprise Features) 🏢
 
 ### Security & Control
 
@@ -80,7 +80,7 @@ This document outlines the planned features and improvements for @farizbytes/rea
 - [ ] Multi-monitor support
 - [ ] Power-saving mode integration
 
-## Version 0.5.0 (Developer Experience) 🛠️
+## Version 3.0.0 (Developer Experience) 🛠️
 
 ### Documentation & Tools
 
@@ -111,7 +111,7 @@ This document outlines the planned features and improvements for @farizbytes/rea
 
 - [ ] Comprehensive testing suite (>90% coverage)
 - [ ] Full documentation with examples
-- [ ] Migration guides from beta versions
+- [ ] Migration guides for version upgrades
 - [ ] Performance benchmarks
 - [ ] Security audit
 - [ ] Long-term support (LTS) commitment
@@ -207,4 +207,4 @@ Check our [GitHub Discussions](https://github.com/farisnceit/react-idle-screensa
 
 **Note:** This roadmap is subject to change based on community feedback, priorities, and resources. Dates are estimates and may shift.
 
-**Last Updated:** January 23, 2026
+**Last Updated:** January 25, 2026

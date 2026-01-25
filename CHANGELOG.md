@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0-beta] - 2025-01-23
+## [0.2.0] - 2025-01-25
+
+### Changed
+
+- Released as stable version (removed beta tag)
+- Verified all features are production-ready
+- Updated documentation to reflect stable status
+
+## [0.1.0] - 2025-01-23
 
 ### Added
 
@@ -35,4 +43,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Customizable appearance and behavior
 - Debug mode for development
 
-[0.1.0-beta]: https://github.com/farisnceit/react-idle-screensaver/releases/tag/v0.1.0-beta
+[0.2.0]: https://github.com/farisnceit/react-idle-screensaver/releases/tag/v0.2.0
+[0.1.0]: https://github.com/farisnceit/react-idle-screensaver/releases/tag/v0.1.0
