@@ -92,8 +92,5 @@
         "type": "git",
         "url": "https://github.com/farisnceit/react-idle-screensaver"
     },
-    "license": "MIT",
-    "dependencies": {
-        "tslib": "^2.8.1"
-    }
+    "license": "MIT"
 }
