@@ -1,6 +1,6 @@
 {
     "name": "@mohamedfariz/react-idle-screensaver",
-    "version": "0.2.4",
+    "version": "0.2.5",
     "description": "A lightweight React component and hook for detecting user inactivity and displaying a customizable idle screensaver. Ideal for kiosks, dashboards, TVs, and unattended React applications. Fully typed and compatible with React 18+",
     "main": "dist/index.cjs.js",
     "module": "dist/index.esm.js",
